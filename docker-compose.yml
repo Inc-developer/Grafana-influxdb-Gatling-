@@ -1,15 +1,12 @@
 version: '2'
 services:
   influxdb:
-    image: influxdb:latest
+    image: izwa/influxdb_1.8:gatling
     ports:
       - '8086:8086'
+      - '2003:2003'
     volumes:
       - influxdb-storage:/var/lib/influxdb
-    environment:
-      - INFLUXDB_DB=db0
-      - INFLUXDB_ADMIN_USER=${INFLUXDB_USERNAME}
-      - INFLUXDB_ADMIN_PASSWORD=${INFLUXDB_PASSWORD}
   chronograf:
     image: chronograf:latest
     ports:
@@ -20,8 +17,6 @@ services:
       - influxdb
     environment:
       - INFLUXDB_URL=http://influxdb:8086
-      - INFLUXDB_USERNAME=${INFLUXDB_USERNAME}
-      - INFLUXDB_PASSWORD=${INFLUXDB_PASSWORD}
   grafana:
     image: grafana/grafana:latest
     ports:
