@@ -5,6 +5,7 @@ Multi-container Docker app built from the following services:
 * [InfluxDB](https://github.com/influxdata/influxdb) - time series database
 * [Chronograf](https://github.com/influxdata/chronograf) - admin UI for InfluxDB
 * [Grafana](https://github.com/grafana/grafana) - visualization UI for InfluxDB
+* Grafana dashboard - 4419
 
 ## Quick Start
 
